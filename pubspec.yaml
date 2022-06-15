@@ -1,0 +1,73 @@
+name: todo_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # equitable for comparing objects
+  equatable: ^2.0.3
+
+  # flutter bloc for state management
+  flutter_bloc: ^7.1.0
+
+  # dio for http calls
+  dio: ^4.0.4
+  dio_cache_interceptor: ^3.0.1
+  dio_cache_interceptor_hive_store: ^3.1.1
+
+  # hive for local storage
+  hive: ^2.0.5
+
+  # get it for dependency injection when needed
+  get_it: ^7.2.0
+
+  # date formatting and localization
+  intl: ^0.17.0
+
+  # colors, ui, icons, utils, fonts and more...
+  cupertino_icons: ^1.0.2
+  hexcolor: ^2.0.5
+  flutter_phosphor_icons: ^0.0.1+6
+  sizer: ^2.0.15
+  lottie: ^1.2.1
+  tab_indicator_styler: ^2.0.0
+  cached_network_image: ^3.2.0
+  path_provider: ^2.0.8
+  flutter_masked_text2: ^0.9.1
+  shimmer: ^2.0.0
+  flutter_native_splash: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  hive_generator: ^1.1.2
+  build_runner: ^2.1.7
+  lint: ^1.8.1
+  logger: ^1.1.0
+  rename: ^2.0.1
+
+flutter:
+  uses-material-design: true
+
+  # Assets
+  assets:
+    - assets/lottie/
+
+  # Fonts
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway_Bold.ttf
+        - asset: assets/fonts/Raleway_Light.ttf
+        - asset: assets/fonts/Raleway_Regular.ttf
+        - asset: assets/fonts/Raleway_Medium.ttf
+        - asset: assets/fonts/Raleway_SemiBold.ttf
