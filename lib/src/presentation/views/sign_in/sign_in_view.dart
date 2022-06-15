@@ -45,11 +45,12 @@ class SignInView extends StatelessWidget {
           }
 
           if (state is UserAuthError) {
+            print(state.error!.message);
             ScaffoldMessenger.of(context).showSnackBar(
               buildAppSnackBar(
                 bgColor: AppColors.errorRed,
                 txtColor: AppColors.white,
-                msg: 'Incorrect Email or Password.',
+                msg: state.error!.message,
                 isFloating: false,
               ),
             );
@@ -94,7 +95,8 @@ class SignInView extends StatelessWidget {
                       text: ' Sign up',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                        NavigationService.instance.navigateTo(AppRouterPaths.signUpPageRoute, context);
+                          NavigationService.instance.navigateTo(
+                              AppRouterPaths.signUpPageRoute, context);
                         },
                       style: TextStyle(
                         color: AppColors.appRed,
