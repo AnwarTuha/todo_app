@@ -57,6 +57,7 @@ class _HomePageViewState extends State<HomePageView>
         }
       },
       child: Scaffold(
+        key: const Key('home_page'),
         backgroundColor: AppColors.white,
         floatingActionButton: FloatingActionButton(
           onPressed: () {

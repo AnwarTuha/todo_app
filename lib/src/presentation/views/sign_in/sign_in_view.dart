@@ -21,6 +21,7 @@ class SignInView extends StatelessWidget {
         TextEditingController();
 
     return Scaffold(
+      key: const Key('login_page'),
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0.0,
@@ -45,9 +46,9 @@ class SignInView extends StatelessWidget {
           }
 
           if (state is UserAuthError) {
-            print(state.error!.message);
             ScaffoldMessenger.of(context).showSnackBar(
               buildAppSnackBar(
+                key: const Key("error_message"),
                 bgColor: AppColors.errorRed,
                 txtColor: AppColors.white,
                 msg: state.error!.message,
@@ -119,6 +120,7 @@ class SignInView extends StatelessWidget {
       builder: (context, state) {
         if (state is UserAuthLoading) {
           return SubmitButton(
+            key: const Key('submit'),
             buttonTitle: 'Signing in...',
             onTap: () {},
             isLoading: true,
@@ -126,12 +128,14 @@ class SignInView extends StatelessWidget {
         }
 
         return SubmitButton(
+          key: const Key('submit'),
           buttonTitle: 'Sign in',
           onTap: () {
-            if (emailController.text.isEmpty ||
-                passwordController.text.isEmpty) {
+            if (emailController.text.trim().isEmpty ||
+                passwordController.text.trim().isEmpty) {
               ScaffoldMessenger.of(context).showSnackBar(
                 buildAppSnackBar(
+                  key: const Key("error_message"),
                   bgColor: AppColors.errorRed,
                   txtColor: AppColors.white,
                   msg: 'Please enter required fields.',

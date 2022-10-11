@@ -43,6 +43,7 @@ class _CredentialInputsState extends State<CredentialInputs> {
         ),
         const SizedBox(height: 10.0),
         TextFormField(
+          key: const Key('phone_number_field'),
           controller: widget.emailController,
           textAlignVertical: TextAlignVertical.center,
           autofocus: true,
@@ -79,6 +80,7 @@ class _CredentialInputsState extends State<CredentialInputs> {
         ),
         const SizedBox(height: 10.0),
         TextFormField(
+          key: const Key('password_field'),
           controller: widget.passwordController,
           textAlignVertical: TextAlignVertical.center,
           autofocus: true,

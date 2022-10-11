@@ -123,7 +123,9 @@ class TodoApp extends StatelessWidget {
                       AppCacheStrategy.LOAD_CACHE_FIRST,
                     ),
                   ),
-                child: const HomePageView(),
+                child: const HomePageView(
+                  key: Key('home_page'),
+                ),
               ),
         },
       ),
